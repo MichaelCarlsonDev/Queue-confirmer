@@ -10,9 +10,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as f:
     with conn:
         while True:
             data = conn.recv(1024)
+            print('Data recieved!')
             show = data.decode('utf8')
             print(show)
+            conn.send(str(1).encode('utf8'))
             if not data:
                 print('End of queue!')
+                #conn.send(str(0).encode('utf8'))
                 break
-            conn.sendall(data)
