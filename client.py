@@ -3,8 +3,14 @@ import socket
 HOST = '127.0.0.1'  # Localhost
 PORT = 13200        # Same port as server
 
-# List of strings
-q = ['read', 'bear', 'strike', 'alpha', 'slot', 4]
+class ChangeableList:
+    def __init__(self, items=None):
+        # Initialize with a list of items or an empty list
+        self.items = []
+
+    def add_item(self, item):
+        """Add an item to the list."""
+        self.items.append(item)
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as f:
     f.connect((HOST, PORT))
