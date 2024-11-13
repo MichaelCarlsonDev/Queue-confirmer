@@ -1,10 +1,12 @@
 import socket
 import threading
 
-HOST = "127.0.0.1"  # localhost
-PORT = 13200         # port
 
-def main():
+
+def main_server():
+    HOST = "127.0.0.1"  # localhost
+    PORT = 13200         # port
+
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind((HOST, PORT))
     server.listen()
@@ -41,4 +43,4 @@ def client_handle(conn, addr):
     conn.close()
 
 if __name__ == "__main__":
-    main()
+    main_server()
