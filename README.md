@@ -1,6 +1,6 @@
 # queue_confirmer
 
-**Version**: 0.0.4  
+**Version**: 0.0.6  
 **Author**: MichaeCarlsonDev (Michael Carlson)  
 **Description**: A package that allows you to handle server and client interaction.
 

@@ -8,8 +8,8 @@ class ChangeableList:
         self.port = None
 
     def set_host(self, HOST, PORT):
-        set.ip = HOST
-        set.port = PORT
+        self.ip = HOST
+        self.port = PORT
 
 
     def add_item(self, item):

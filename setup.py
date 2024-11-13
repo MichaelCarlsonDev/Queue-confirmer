@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-VERSION = '0.0.4'
+VERSION = '0.0.6'
 DESCRIPTION = 'Handling server and client information'
 LONG_DESCRIPTION = 'A package that allows you to handle server and client interaction.'
 
