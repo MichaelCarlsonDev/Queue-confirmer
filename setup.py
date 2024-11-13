@@ -1,20 +1,21 @@
 from setuptools import setup, find_packages
-import codecs
-import os
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
-VERSION = '0.0.1'
+VERSION = '0.0.4'
 DESCRIPTION = 'Handling server and client information'
 LONG_DESCRIPTION = 'A package that allows you to handle server and client interaction.'
 
-# Setting up
 setup(
     name="queue_confirmer",
     version=VERSION,
     author="MichaeCarlsonDev (Michael Carlson)",
     author_email="<soprano19522@gmail.com>",
     description=DESCRIPTION,
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     packages=find_packages(),
-    install_requires=['socket', 'treading'],
+    install_requires=[],
     keywords=['python', 'sockets', 'solar car', 'threading'],
     classifiers=[
         "Development Status :: 1 - Planning",
