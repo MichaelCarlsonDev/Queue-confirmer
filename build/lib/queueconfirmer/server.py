@@ -1,21 +1,21 @@
 import socket
 import threading
 
+def main_server(HOST, PORT):
 
-
-def main_server():
-    HOST = "127.0.0.1"  # localhost
-    PORT = 13200         # port
-
-    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.bind((HOST, PORT))
-    server.listen()
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.bind((HOST, PORT))
+    s.listen()
 
     # Waits for a client to connect
     while True:
-        conn, addr = server.accept()
+        conn, addr = s.accept()
         thread = threading.Thread(target = client_handle, args = (conn, addr))
         thread.start()
+def set_host(self, HOST, PORT):
+    self.ip = HOST
+    self.port = PORT
+
 def client_handle(conn, addr):
 
     # Runs the communication loop
@@ -34,6 +34,7 @@ def client_handle(conn, addr):
 
         # Identifies end of trip
         if show == "endtrip":
+            conn.send(str(2).encode('utf8'))
             break
 
 
