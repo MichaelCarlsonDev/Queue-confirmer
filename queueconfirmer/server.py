@@ -34,6 +34,7 @@ def client_handle(conn, addr):
 
         # Identifies end of trip
         if show == "endtrip":
+            conn.send(str(2).encode('utf8'))
             break
 
 

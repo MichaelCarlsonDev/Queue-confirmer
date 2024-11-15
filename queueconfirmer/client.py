@@ -31,13 +31,15 @@ class ChangeableList:
                 # Wait for acknowledgment from the server
                 data = c.recv(1024)
                 conf = data.decode('utf8')
-                print("Server:", conf)
+                if conf == 'endtrip':
+                    # Will print "End of queue!" when data is complete (server side)
+                    print("End of queue!")
+                    break
+                else:
+                    print("Server:", conf)
 
                 # Pop the first element after receiving confirmation
                 self.items.pop(0)
-
-        # Will print "End of queue!" when data is complete (server side)
-        print("End of queue!")
 
     # Ends the server connection
     def end_trip(self):
